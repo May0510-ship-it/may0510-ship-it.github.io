@@ -1,18 +1,18 @@
-html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>May | 服装设计 & 全球批发</title>
+    <title>May | PPE 产品设计 & 全球大宗批发</title>
     <style>
         :root {
             --bg-color: #f3eae1;
             --card-bg: #ffffff;
             --text-color: #000000;
             --accent-yellow: #fcd34d;
+            --accent-blue: #93c5fd; /* 换成专业的工业防护蓝 */
             --accent-green: #a7f3d0;
             --accent-purple: #e0e7ff;
-            --accent-pink: #fce7f3;
         }
 
         body {
@@ -115,7 +115,7 @@ html<!DOCTYPE html>
             color: #333;
         }
 
-        /* 【核心修改】双核心独立业务卡片 */
+        /* 双核心独立业务卡片布局 */
         .business-container {
             display: flex;
             flex-direction: column;
@@ -137,14 +137,14 @@ html<!DOCTYPE html>
             animation: floatAnim 4s ease-in-out infinite;
         }
 
-        /* 两个卡片交错动画时间，显得更灵动 */
+        /* 两个卡片交错动画时间 */
         .biz-card.main-job { 
-            background-color: var(--accent-pink); 
+            background-color: var(--accent-blue); 
             animation-delay: 0s;
         }
         .biz-card.side-job { 
             background-color: var(--accent-yellow); 
-            animation-delay: 2s; /* 延迟2秒，形成交替起伏 */
+            animation-delay: 2s; 
         }
 
         .biz-card h3 {
@@ -214,7 +214,7 @@ html<!DOCTYPE html>
         .circle-art {
             width: 380px;
             height: 380px;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b, #86e3ce);
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6, #93c5fd);
             border-radius: 50%;
             border: 4px solid #000;
             box-shadow: 15px 15px 0px rgba(0,0,0,0.15);
@@ -224,13 +224,13 @@ html<!DOCTYPE html>
 
         .leaf-1, .leaf-2 {
             position: absolute;
-            background: #a7f3d0;
+            background: var(--accent-yellow);
             border: 3px solid #000;
-            border-radius: 0 50px 0 50px;
+            border-radius: 50%;
         }
 
-        .leaf-1 { width: 60px; height: 35px; top: 40%; left: 20%; transform: rotate(-20deg); }
-        .leaf-2 { width: 50px; height: 30px; top: 48%; left: 38%; transform: rotate(15deg); background: #34d399; }
+        .leaf-1 { width: 40px; height: 40px; top: 40%; left: 20%; }
+        .leaf-2 { width: 60px; height: 60px; top: 48%; left: 38%; background: #ffffff; }
 
         .line-art {
             position: absolute;
@@ -249,7 +249,7 @@ html<!DOCTYPE html>
     <nav>
         <a href="#">Δ 首页</a>
         <a href="#">✦ 经历认证</a>
-        <a href="#" class="shop-nav" target="_blank">✣ 浏览全球批发商店 ➔</a>
+        <a href="#" class="shop-nav" target="_blank">✣ 浏览全球 PPE 批发商店 ➔</a>
     </nav>
 
     <!-- 主体内容布局 -->
@@ -266,32 +266,32 @@ html<!DOCTYPE html>
             
             <div class="edu">🎓 新加坡国立大学 (NUS) 学士学位</div>
 
-            <!-- 【核心修改】两大独立动画卡片区域 -->
+            <!-- 两大独立动画卡片区域 -->
             <div class="business-container">
                 
                 <!-- 卡片一：主业 -->
                 <div class="biz-card main-job">
-                    <h3>👗 核心主业：服装设计工作室</h3>
-                    <p>创立于新加坡的独立服装设计工作室。专注于前沿时尚美学的构思，热衷于将个性的设计灵感转化为高品质的面料与成衣剪裁，为当代时尚注入独特视角。</p>
+                    <h3>🛡️ 核心主业：PPE 产品设计工作室</h3>
+                    <p>创立于新加坡的独立设计工作室。专注于个人防护装备（PPE）的创新设计与合规研发，致力于将符合国际安全标准的高端美学与人体工学融入防护产品中。</p>
                 </div>
 
                 <!-- 卡片二：副业 -->
                 <div class="biz-card side-job">
-                    <h3>🌐 核心副业：全球批发在线商店</h3>
-                    <p>致力于将优质的服装资源与国际供应链打通，面向全球多个国家与地区的跨国采购商、零售商提供稳定高效的在线全球服装批发业务。</p>
-                    <a href="#" class="shop-link-btn" target="_blank">进入批发网店 ➔</a>
+                    <h3>🌐 核心副业：PPE 全球批发在线商店</h3>
+                    <p>打通海内外核心供应链，面向全球多个国家与地区的跨国采购商、企业机构提供高质量、大批量的 PPE 现货及定制化跨国大宗批发业务。</p>
+                    <a href="#" class="shop-link-btn" target="_blank">进入 PPE 批发网店 ➔</a>
                 </div>
 
             </div>
             
             <div class="bio">
-                作为一名品牌主理人，我习惯将先锋的设计美学与全球化的商业视野相结合。无论是独立设计的灵感碰撞，还是跨国批发的供应链管理，我都致力于用高标准的专业度与全球客户建立长期的共赢连结。
+                作为一名专业品牌主理人，我将严谨的防护产品标准与全球化的商业视野相结合。无论是前沿安全产品的设计研发，还是跨国供应链的高效统筹，我都致力于用高水准的行业标准与全球客户建立长期稳固的合作关系。
             </div>
             
             <a href="tel:+6591956342" class="contact-btn">📞 联系方式：+65 9195 6342</a>
         </div>
 
-        <!-- 右侧新粗犷主义几何插画 -->
+        <!-- 右侧新粗犷主义几何插画（已调整为工业冷色调） -->
         <div class="art-side">
             <div class="circle-art">
                 <div class="line-art"></div>
