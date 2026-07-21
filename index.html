@@ -3,49 +3,75 @@ html<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人主页</title>
+    <title>May 的个人主页</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f9; color: #333; }
-        header { background: #24292e; color: #fff; padding: 2rem; text-align: center; }
-        header h1 { margin: 0; font-size: 2.5rem; }
-        header p { margin: 0.5rem 0 0; color: #bbb; }
-        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-        section { background: #fff; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        h2 { color: #24292e; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
-        ul { padding-left: 1.2rem; }
-        footer { text-align: center; padding: 2rem; color: #777; font-size: 0.9rem; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.7; margin: 0; padding: 0; background-color: #f4f7f5; color: #2c3e2b; }
+        header { background: linear-gradient(135deg, #2e5a44, #477c63); color: #fff; padding: 3.5rem 2rem; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        header h1 { margin: 0; font-size: 2.8rem; letter-spacing: 2px; }
+        header p { margin: 0.8rem 0 0; color: #d1e2d9; font-size: 1.1rem; }
+        .container { max-width: 800px; margin: 2.5rem auto; padding: 0 1.5rem; }
+        
+        /* 头像样式 */
+        .profile-pic-container { text-align: center; margin-top: -50px; margin-bottom: 1.5rem; }
+        .profile-pic { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 5px solid #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background-color: #e2ede7; }
+        
+        section { background: #fff; padding: 2rem; margin-bottom: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(46,90,68,0.05); border-left: 5px solid #477c63; }
+        h2 { color: #2e5a44; border-bottom: 1px solid #e2ede7; padding-bottom: 0.6rem; margin-top: 0; font-size: 1.4rem; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+        .info-item h3 { margin: 0 0 0.5rem 0; color: #477c63; font-size: 1.1rem; }
+        .info-item p { margin: 0; color: #556b5d; }
+        ul { padding-left: 1.2rem; margin: 0; color: #556b5d; }
+        li { margin-bottom: 0.5rem; }
+        
+        footer { text-align: center; padding: 3rem 2rem; color: #8fa499; font-size: 0.9rem; }
+        footer a { color: #477c63; text-decoration: none; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>欢迎来到我的世界</h1>
-        <p>这是我通过 GitHub Pages 建立的第一个网站</p>
+        <h1>May's Space</h1>
+        <p>服装设计与全球批发在线商店</p>
     </header>
 
     <div class="container">
+        <!-- 自拍照片位置，默认显示占位图 -->
+        <div class="profile-pic-container">
+            <img src="https://unsplash.com" alt="May 的自拍" class="profile-pic" id="myAvatar">
+        </div>
+
         <section>
-            <h2>关于我</h2>
-            <p>你好！我是一名正在探索网页开发的新手。我喜欢学习新技术，并在这里分享我的成长历程。</p>
+            <h2>关于我 / About Me</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>居住地</h3>
+                    <p>新加坡 (SG) / 吉隆坡 (KL)</p>
+                </div>
+                <div class="info-item">
+                    <h3>教育背景</h3>
+                    <p>新加坡国立大学 (NUS) 毕业</p>
+                </div>
+            </div>
         </section>
 
         <section>
-            <h2>我的技能 / 兴趣</h2>
+            <h2>职业与事业 / Career</h2>
             <ul>
-                <li>HTML / CSS / JavaScript 网页基础</li>
-                <li>开源探索与 Git 版本控制</li>
-                <li>喜欢阅读、编码与跨界尝试</li>
+                <li><strong>主业：</strong>经营个人独立服装设计工作室（创立于新加坡）</li>
+                <li><strong>副业：</strong>运营面向全球批发的在线商店</li>
             </ul>
         </section>
 
         <section>
-            <h2>联系方式</h2>
-            <p>你可以通过邮箱或者我的 GitHub 账号找到我。</p>
+            <h2>联系方式 / Contact</h2>
+            <p>如果您对我的设计作品或批发业务感兴趣，欢迎联系我：</p>
+            <p style="font-size: 1.2rem; font-weight: bold; color: #2e5a44; margin-top: 0.5rem;">📞 +65 9195 6342</p>
         </section>
     </div>
 
     <footer>
-        <p>© 2026 我的个人网站. Powered by GitHub Pages</p>
+        <p>© 2026 May. All Rights Reserved.</p>
+        <p>Powered by <a href="https://may0510-ship-it.github.io/May.github.io/" target="_blank">GitHub Pages</a></p>
     </footer>
 
 </body>
