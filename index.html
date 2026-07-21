@@ -23,7 +23,7 @@
             box-sizing: border-box;
         }
 
-        /* Navigation */
+        /* Top Navigation */
         nav {
             display: flex;
             gap: 10px;
@@ -218,9 +218,14 @@
             box-shadow: 7px 7px 0px #000;
         }
 
+        /* 🛠️ 【彻底重构图片表现】抛弃有毒高度限制，采用绝对安全渲染 */
         .art-box img {
             width: 100%;
-            height: 180px;
+            height: auto;
+            max-height: 180px;
+            min-height: 150px;
+            display: block;
+            margin: 0 auto;
             object-fit: cover;
             border-bottom: 2px solid #000;
             background-color: #e5e7eb;
@@ -230,7 +235,7 @@
             display: block;
             font-size: 0.85rem;
             font-weight: bold;
-            padding: 6px 0 2px 0;
+            padding: 8px 0 2px 0;
         }
     </style>
 </head>
@@ -297,8 +302,4 @@
                 </div>
             </div>
 
-            <!-- PPE Products Section - 【这次绝对补齐了图片标签！】 -->
-            <div class="gallery-section ppe">
-                <h2>PPE Global Supply</h2>
-                <div class="grid-2x2">
-                    <div class="art-box">
+            <!-- PPE Products Section - 【无毒纯净原生标签版】 -->
