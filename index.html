@@ -9,8 +9,8 @@
             --bg-color: #f3eae1;
             --card-bg: #ffffff;
             --text-color: #000000;
-            --accent-yellow: #fcd34d; /* 副业金色 */
-            --accent-green: #a7f3d0;  /* 主业树叶绿 */
+            --accent-yellow: #fcd34d; 
+            --accent-green: #a7f3d0;  
             --accent-purple: #e0e7ff;
         }
 
@@ -65,7 +65,7 @@
             align-items: start;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .main-layout { grid-template-columns: 1fr; }
         }
 
@@ -122,7 +122,6 @@
             margin-bottom: 2rem;
         }
 
-        /* 呼吸上下浮动动画 */
         @keyframes floatAnim {
             0% { transform: translateY(0px) rotate(0.5deg); }
             50% { transform: translateY(-6px) rotate(-0.5deg); box-shadow: 8px 14px 0px #000; }
@@ -136,29 +135,11 @@
             animation: floatAnim 4s ease-in-out infinite;
         }
 
-        /* 两个卡片交错动画时间 */
-        .biz-card.main-job { 
-            background-color: var(--accent-green); /* 主业改回树叶绿 */
-            animation-delay: 0s;
-        }
-        .biz-card.side-job { 
-            background-color: var(--accent-yellow); /* 副业亮金色 */
-            animation-delay: 2s; 
-        }
+        .biz-card.main-job { background-color: var(--accent-green); animation-delay: 0s; }
+        .biz-card.side-job { background-color: var(--accent-yellow); animation-delay: 2s; }
 
-        .biz-card h3 {
-            margin: 0 0 0.6rem 0;
-            font-size: 1.35rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .biz-card p {
-            margin: 0;
-            font-size: 1.05rem;
-            line-height: 1.6;
-        }
+        .biz-card h3 { margin: 0 0 0.6rem 0; font-size: 1.35rem; display: flex; align-items: center; gap: 8px; }
+        .biz-card p { margin: 0; font-size: 1.05rem; line-height: 1.6; }
 
         .shop-link-btn {
             display: inline-block;
@@ -171,10 +152,7 @@
             font-size: 0.9rem;
             border: 2px solid #000;
         }
-        .shop-link-btn:hover {
-            background: #fff;
-            color: #000;
-        }
+        .shop-link-btn:hover { background: #fff; color: #000; }
 
         .bio {
             font-size: 1.1rem;
@@ -195,50 +173,65 @@
             box-shadow: 5px 5px 0px #000;
             font-size: 1.1rem;
         }
+        .contact-btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0px #000; }
 
-        .contact-btn:hover {
-            transform: translate(-2px, -2px);
+        /* 【核心新增】右侧作品展示墙样式 */
+        .portfolio-side {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .gallery-section {
+            background: var(--card-bg);
+            border: 4px solid #000;
+            box-shadow: 8px 8px 0px #000;
+            padding: 1.5rem;
+        }
+
+        .gallery-section h2 {
+            margin: 0 0 1.5rem 0;
+            font-size: 1.5rem;
+            font-weight: 900;
+            border-bottom: 3px solid #000;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .gallery-section.fashion h2 { background: var(--accent-green); padding: 4px 12px; border: 3px solid #000; box-shadow: 3px 3px 0px #000;}
+        .gallery-section.ppe h2 { background: var(--accent-yellow); padding: 4px 12px; border: 3px solid #000; box-shadow: 3px 3px 0px #000;}
+
+        .grid-2x2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .art-box {
+            border: 3px solid #000;
+            box-shadow: 5px 5px 0px #000;
+            background: #fdfaf7;
+            padding: 6px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .art-box:hover {
+            transform: scale(1.03) translate(-2px, -2px);
             box-shadow: 7px 7px 0px #000;
         }
 
-        /* 右侧潮流艺术插画 */
-        .art-side {
-            position: relative;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .art-box img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 2px solid #000;
+            background-color: #e5e7eb;
         }
 
-        .circle-art {
-            width: 380px;
-            height: 380px;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b, #86e3ce);
-            border-radius: 50%;
-            border: 4px solid #000;
-            box-shadow: 15px 15px 0px rgba(0,0,0,0.15);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .leaf-1, .leaf-2 {
-            position: absolute;
-            background: var(--accent-green);
-            border: 3px solid #000;
-            border-radius: 0 50px 0 50px;
-        }
-
-        .leaf-1 { width: 60px; height: 35px; top: 40%; left: 20%; transform: rotate(-20deg); }
-        .leaf-2 { width: 50px; height: 30px; top: 48%; left: 38%; transform: rotate(15deg); background: #34d399; }
-
-        .line-art {
-            position: absolute;
-            width: 250px;
-            height: 8px;
-            background: #000;
-            top: 50%;
-            left: 10%;
-            transform: rotate(-15deg);
+        .art-box span {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 6px 0 2px 0;
         }
     </style>
 </head>
@@ -267,20 +260,18 @@
 
             <!-- 两大独立动画卡片区域 -->
             <div class="business-container">
-                
-                <!-- 卡片一：核心主业（树叶绿） -->
+                <!-- 卡片一：核心主业 -->
                 <div class="biz-card main-job">
                     <h3>👗 核心主业：服装设计工作室</h3>
-                    <p>创立于新加坡的独立服装设计工作室。专注于前沿时尚美学的构思与高端定制，热衷于将个性的设计灵感转化为高品质的面料与成衣剪裁，为当代时尚注入独特视角。</p>
+                    <p>创立于新加坡的独立服装设计工作室。专注于前沿时尚美学的构思与高端定制，热衷于将个性的设计灵感转化为高品质的面料与成衣剪裁。</p>
                 </div>
 
-                <!-- 卡片二：核心副业（亮金色，高亮突出） -->
+                <!-- 卡片二：核心副业 -->
                 <div class="biz-card side-job">
                     <h3>🌐 核心副业：PPE 产品全球批发在线商店</h3>
-                    <p>打通海内外核心供应链，面向全球多个国家与地区的跨国采购商、企业机构提供高质量、大批量的个人防护装备（PPE）现货及定制化跨国大宗批发业务。</p>
+                    <p>打通海内外核心供应链，面向全球多个国家与地区的跨国采购商提供高质量、大批量的个人防护装备（PPE）大宗批发业务。</p>
                     <a href="#" class="shop-link-btn" target="_blank">进入 PPE 批发网店 ➔</a>
                 </div>
-
             </div>
             
             <div class="bio">
@@ -290,13 +281,39 @@
             <a href="tel:+6591956342" class="contact-btn">📞 联系方式：+65 9195 6342</a>
         </div>
 
-        <!-- 右侧新粗犷主义几何插画 -->
-        <div class="art-side">
-            <div class="circle-art">
-                <div class="line-art"></div>
-                <div class="leaf-1"></div>
-                <div class="leaf-2"></div>
+        <!-- 【核心修改】右侧替换为：真实的图片画廊展示墙 -->
+        <div class="portfolio-side">
+            
+            <!-- 服装设计作品区 -->
+            <div class="gallery-section fashion">
+                <h2>Design Portfolio / 服装设计作品</h2>
+                <div class="grid-2x2">
+                    <div class="art-box">
+                        <img src="design1.jpg" alt="服装设计图1">
+                        <span>设计草图 / Sketch 01</span>
+                    </div>
+                    <div class="art-box">
+                        <img src="design2.jpg" alt="成衣照2">
+                        <span>成衣高级定制 / Work 02</span>
+                    </div>
+                </div>
             </div>
+
+            <!-- PPE防护产品区 -->
+            <div class="gallery-section ppe">
+                <h2>PPE Supply / 核心供应产品</h2>
+                <div class="grid-2x2">
+                    <div class="art-box">
+                        <img src="ppe1.jpg" alt="PPE产品1">
+                        <span>医用及工业级防护 / PPE 01</span>
+                    </div>
+                    <div class="art-box">
+                        <img src="ppe2.jpg" alt="PPE产品2">
+                        <span>大宗规格定制 / Bulk Supply</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </main>
