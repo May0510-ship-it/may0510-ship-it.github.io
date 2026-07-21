@@ -23,7 +23,7 @@
             box-sizing: border-box;
         }
 
-        /* 完美版顶级导航 */
+        /* Navigation */
         nav {
             display: flex;
             gap: 10px;
@@ -55,7 +55,7 @@
         nav a:nth-child(2) { background-color: var(--accent-green); }
         nav a.shop-nav { background-color: var(--accent-yellow); }
 
-        /* 完美版主干分栏 - 就是这个结构之前完美显示 */
+        /* Main Layout */
         .main-layout {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
@@ -69,7 +69,7 @@
             .main-layout { grid-template-columns: 1fr; }
         }
 
-        /* 左侧名片卡 */
+        /* Left Side Card */
         .profile-card {
             background: var(--card-bg);
             border: 4px solid #000;
@@ -113,7 +113,7 @@
             color: #333;
         }
 
-        /* 呼吸上下浮动动画 */
+        /* Business Cards Container */
         .business-container {
             display: flex;
             flex-direction: column;
@@ -174,7 +174,7 @@
         }
         .contact-btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0px #000; }
 
-        /* 右侧展区总容器 - 名字严格锁定为原来的名称，绝不乱改 */
+        /* Right Column Containers */
         .portfolio-side {
             display: flex;
             flex-direction: column;
@@ -257,7 +257,6 @@
             
             <div class="edu">🎓 Bachelor's Degree, National University of Singapore (NUS)</div>
 
-            <!-- 两大呼吸动画卡片 -->
             <div class="business-container">
                 <!-- Card 1: Main Business -->
                 <div class="biz-card main-job">
@@ -280,7 +279,7 @@
             <a href="tel:+6591956342" class="contact-btn">📞 Connect: +65 9195 6342</a>
         </div>
 
-        <!-- Right Side Column - 恢复当初最完美的中文版排版骨架 -->
+        <!-- Right Side Column -->
         <div class="portfolio-side">
             
             <!-- Fashion Portfolio Section -->
@@ -298,7 +297,7 @@
                 </div>
             </div>
 
-            <!-- PPE Products Section -->
+            <!-- PPE Products Section - 【这次绝对补齐了图片标签！】 -->
             <div class="gallery-section ppe">
                 <h2>PPE Global Supply</h2>
                 <div class="grid-2x2">
