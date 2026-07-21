@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+html<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -53,10 +52,9 @@
             box-shadow: 6px 6px 0px #000;
         }
 
-        nav a:nth-child(1) { background-color: var(--accent-pink); }
-        nav a:nth-child(2) { background-color: var(--accent-purple); }
-        nav a:nth-child(3) { background-color: var(--accent-green); }
-        nav a:nth-child(4) { background-color: var(--accent-yellow); }
+        nav a:nth-child(1) { background-color: var(--accent-purple); }
+        nav a:nth-child(2) { background-color: var(--accent-green); }
+        nav a.shop-nav { background-color: var(--accent-yellow); }
 
         /* 主体布局 */
         .main-layout {
@@ -69,12 +67,10 @@
         }
 
         @media (max-width: 768px) {
-            .main-layout {
-                grid-template-columns: 1fr;
-            }
+            .main-layout { grid-template-columns: 1fr; }
         }
 
-        /* 左侧卡片 */
+        /* 左侧个人名片卡 */
         .profile-card {
             background: var(--card-bg);
             border: 4px solid #000;
@@ -107,26 +103,78 @@
 
         h1 {
             font-size: 3.5rem;
-            margin: 0 0 1.5rem 0;
+            margin: 0 0 1rem 0;
             line-height: 1.2;
             font-weight: 900;
-        }
-
-        .badge {
-            background-color: var(--accent-yellow);
-            display: inline-block;
-            padding: 6px 12px;
-            font-weight: bold;
-            border: 3px solid #000;
-            box-shadow: 3px 3px 0px #000;
-            margin-bottom: 1.5rem;
         }
 
         .edu {
             font-size: 1.1rem;
             font-weight: bold;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             color: #333;
+        }
+
+        /* 【核心修改】双核心独立业务卡片 */
+        .business-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        /* 呼吸上下浮动动画 */
+        @keyframes floatAnim {
+            0% { transform: translateY(0px) rotate(0.5deg); }
+            50% { transform: translateY(-6px) rotate(-0.5deg); box-shadow: 8px 14px 0px #000; }
+            100% { transform: translateY(0px) rotate(0.5deg); }
+        }
+
+        .biz-card {
+            border: 3px solid #000;
+            box-shadow: 6px 6px 0px #000;
+            padding: 1.8rem;
+            animation: floatAnim 4s ease-in-out infinite;
+        }
+
+        /* 两个卡片交错动画时间，显得更灵动 */
+        .biz-card.main-job { 
+            background-color: var(--accent-pink); 
+            animation-delay: 0s;
+        }
+        .biz-card.side-job { 
+            background-color: var(--accent-yellow); 
+            animation-delay: 2s; /* 延迟2秒，形成交替起伏 */
+        }
+
+        .biz-card h3 {
+            margin: 0 0 0.6rem 0;
+            font-size: 1.35rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .biz-card p {
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .shop-link-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            background: #000;
+            color: #fff;
+            padding: 6px 14px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 2px solid #000;
+        }
+        .shop-link-btn:hover {
+            background: #fff;
+            color: #000;
         }
 
         .bio {
@@ -139,7 +187,7 @@
 
         .contact-btn {
             display: inline-block;
-            background: var(--accent-green);
+            background: var(--accent-purple);
             color: #000;
             text-decoration: none;
             font-weight: bold;
@@ -200,9 +248,8 @@
     <!-- 顶部艺术风格导航栏 -->
     <nav>
         <a href="#">Δ 首页</a>
-        <a href="#">✦ 经历</a>
-        <a href="#">✣ 商店</a>
-        <a href="#">✉ 联系</a>
+        <a href="#">✦ 经历认证</a>
+        <a href="#" class="shop-nav" target="_blank">✣ 浏览全球批发商店 ➔</a>
     </nav>
 
     <!-- 主体内容布局 -->
@@ -211,25 +258,40 @@
         <!-- 左侧个人名片卡 -->
         <div class="profile-card">
             <div class="photo-frame">
-                <!-- 这里已经完美对准了你的自拍 me.jpg -->
                 <img src="me.jpg" alt="May 的自拍照">
             </div>
             
             <div class="location">新加坡 · 吉隆坡</div>
-            <h1>嗨，我是<br>May。</h1>
-            
-            <div class="badge">服装设计师与主理人</div>
+            <h1>嗨，我是 May。</h1>
             
             <div class="edu">🎓 新加坡国立大学 (NUS) 学士学位</div>
-            
-            <div class="bio">
-                我创立并经营着一家位于新加坡的独立服装设计工作室。同时，作为副业，我也运营着一家面向全球批发的在线商店。我热衷于将独特的时尚构思转化为高品质的服装面料，用创意与全球客户建立长期的商业连结。
+
+            <!-- 【核心修改】两大独立动画卡片区域 -->
+            <div class="business-container">
+                
+                <!-- 卡片一：主业 -->
+                <div class="biz-card main-job">
+                    <h3>👗 核心主业：服装设计工作室</h3>
+                    <p>创立于新加坡的独立服装设计工作室。专注于前沿时尚美学的构思，热衷于将个性的设计灵感转化为高品质的面料与成衣剪裁，为当代时尚注入独特视角。</p>
+                </div>
+
+                <!-- 卡片二：副业 -->
+                <div class="biz-card side-job">
+                    <h3>🌐 核心副业：全球批发在线商店</h3>
+                    <p>致力于将优质的服装资源与国际供应链打通，面向全球多个国家与地区的跨国采购商、零售商提供稳定高效的在线全球服装批发业务。</p>
+                    <a href="#" class="shop-link-btn" target="_blank">进入批发网店 ➔</a>
+                </div>
+
             </div>
             
-            <a href="tel:+6591956342" class="contact-btn">联系方式：+65 9195 6342</a>
+            <div class="bio">
+                作为一名品牌主理人，我习惯将先锋的设计美学与全球化的商业视野相结合。无论是独立设计的灵感碰撞，还是跨国批发的供应链管理，我都致力于用高标准的专业度与全球客户建立长期的共赢连结。
+            </div>
+            
+            <a href="tel:+6591956342" class="contact-btn">📞 联系方式：+65 9195 6342</a>
         </div>
 
-        <!-- 右侧新粗犷主义几何插画（纯代码绘制，无需外接图片） -->
+        <!-- 右侧新粗犷主义几何插画 -->
         <div class="art-side">
             <div class="circle-art">
                 <div class="line-art"></div>
