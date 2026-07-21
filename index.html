@@ -220,6 +220,7 @@
             padding: 6px;
             text-align: center;
             transition: transform 0.2s;
+            display: block; /* 修复点一：强行块级化 */
         }
         .art-box:hover {
             transform: scale(1.03) translate(-2px, -2px);
@@ -227,6 +228,7 @@
         }
 
         .art-box img {
+            display: block; /* 修复点二：消除行内间隙 */
             width: 100%;
             height: 180px;
             object-fit: cover;
@@ -300,4 +302,3 @@
                         <span>Creative Sketch / 01</span>
                     </div>
                     <div class="art-box">
-                        <img src="design2.jpg" alt="Couture Work 2">
