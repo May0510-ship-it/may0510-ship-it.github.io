@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>May | 服装设计 & PPE全球大宗批发</title>
+    <title>May | Fashion Design & PPE Global Wholesale</title>
     <style>
         :root {
             --bg-color: #f3eae1;
@@ -15,7 +15,7 @@
         }
 
         body {
-            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
@@ -23,7 +23,7 @@
             box-sizing: border-box;
         }
 
-        /* 顶部导航栏样式 */
+        /* Top Navigation */
         nav {
             display: flex;
             gap: 10px;
@@ -55,7 +55,7 @@
         nav a:nth-child(2) { background-color: var(--accent-green); }
         nav a.shop-nav { background-color: var(--accent-yellow); }
 
-        /* 主体布局 */
+        /* Main Layout */
         .main-layout {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
@@ -69,7 +69,7 @@
             .main-layout { grid-template-columns: 1fr; }
         }
 
-        /* 左侧个人名片卡 */
+        /* Profile Card */
         .profile-card {
             background: var(--card-bg);
             border: 4px solid #000;
@@ -77,7 +77,7 @@
             padding: 2.5rem;
         }
 
-        /* 照片容器 */
+        /* Photo Frame */
         .photo-frame {
             border: 4px solid #000;
             box-shadow: 8px 8px 0px #000;
@@ -98,6 +98,8 @@
             color: #555;
             font-weight: bold;
             margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         h1 {
@@ -108,13 +110,13 @@
         }
 
         .edu {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: bold;
             margin-bottom: 2rem;
             color: #333;
         }
 
-        /* 双核心独立业务卡片布局 */
+        /* Business Cards Container */
         .business-container {
             display: flex;
             flex-direction: column;
@@ -138,28 +140,31 @@
         .biz-card.main-job { background-color: var(--accent-green); animation-delay: 0s; }
         .biz-card.side-job { background-color: var(--accent-yellow); animation-delay: 2s; }
 
-        .biz-card h3 { margin: 0 0 0.6rem 0; font-size: 1.35rem; display: flex; align-items: center; gap: 8px; }
-        .biz-card p { margin: 0; font-size: 1.05rem; line-height: 1.6; }
+        .biz-card h3 { margin: 0 0 0.6rem 0; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; font-weight: 900; }
+        .biz-card p { margin: 0; font-size: 1rem; line-height: 1.6; color: #1a1a1a; }
 
         .shop-link-btn {
             display: inline-block;
             margin-top: 1rem;
             background: #000;
             color: #fff;
-            padding: 6px 14px;
+            padding: 8px 16px;
             font-weight: bold;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             border: 2px solid #000;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .shop-link-btn:hover { background: #fff; color: #000; }
 
         .bio {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1.05rem;
+            line-height: 1.7;
             margin-bottom: 2rem;
             border-top: 3px dashed #000;
             padding-top: 1.5rem;
+            color: #222;
         }
 
         .contact-btn {
@@ -175,7 +180,7 @@
         }
         .contact-btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0px #000; }
 
-        /* 【核心新增】右侧作品展示墙样式 */
+        /* Portfolio Side */
         .portfolio-side {
             display: flex;
             flex-direction: column;
@@ -191,11 +196,13 @@
 
         .gallery-section h2 {
             margin: 0 0 1.5rem 0;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 900;
             border-bottom: 3px solid #000;
             padding-bottom: 0.5rem;
             display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .gallery-section.fashion h2 { background: var(--accent-green); padding: 4px 12px; border: 3px solid #000; box-shadow: 3px 3px 0px #000;}
         .gallery-section.ppe h2 { background: var(--accent-yellow); padding: 4px 12px; border: 3px solid #000; box-shadow: 3px 3px 0px #000;}
@@ -231,92 +238,66 @@
             display: block;
             font-size: 0.85rem;
             font-weight: bold;
-            padding: 6px 0 2px 0;
+            padding: 8px 0 4px 0;
         }
     </style>
 </head>
 <body>
 
-    <!-- 顶部艺术风格导航栏 -->
+    <!-- Navigation -->
     <nav>
-        <a href="#">Δ 首页</a>
-        <a href="#">✦ 经历认证</a>
-        <a href="#" class="shop-nav" target="_blank">✣ 进入 PPE 批发在线商店 ➔</a>
+        <a href="#">Δ Home</a>
+        <a href="#">✦ Credentials</a>
+        <a href="#" class="shop-nav" target="_blank">✣ Visit PPE Wholesale Store ➔</a>
     </nav>
 
-    <!-- 主体内容布局 -->
+    <!-- Main Content Layout -->
     <main class="main-layout">
         
-        <!-- 左侧个人名片卡 -->
+        <!-- Left Side: Profile Card -->
         <div class="profile-card">
             <div class="photo-frame">
-                <img src="me.jpg" alt="May 的自拍照">
+                <img src="me.jpg" alt="May's Profile Photo">
             </div>
             
-            <div class="location">新加坡 · 吉隆坡</div>
-            <h1>嗨，我是 May。</h1>
+            <div class="location">Singapore · Kuala Lumpur</div>
+            <h1>Hi, I'm May.</h1>
             
-            <div class="edu">🎓 新加坡国立大学 (NUS) 学士学位</div>
+            <div class="edu">🎓 Bachelor's Degree, National University of Singapore (NUS)</div>
 
-            <!-- 两大独立动画卡片区域 -->
+            <!-- Core Business Cards -->
             <div class="business-container">
-                <!-- 卡片一：核心主业 -->
+                <!-- Card 1: Main Business -->
                 <div class="biz-card main-job">
-                    <h3>👗 核心主业：服装设计工作室</h3>
-                    <p>创立于新加坡的独立服装设计工作室。专注于前沿时尚美学的构思与高端定制，热衷于将个性的设计灵感转化为高品质的面料与成衣剪裁。</p>
+                    <h3>👗 Core Business: Fashion Design Studio</h3>
+                    <p>An independent fashion studio based in Singapore. Focusing on avant-garde design concepts and premium bespoke tailoring, transforming creative inspirations into high-quality textiles and sophisticated silhouettes.</p>
                 </div>
 
-                <!-- 卡片二：核心副业 -->
+                <!-- Card 2: Side Business -->
                 <div class="biz-card side-job">
-                    <h3>🌐 核心副业：PPE 产品全球批发在线商店</h3>
-                    <p>打通海内外核心供应链，面向全球多个国家与地区的跨国采购商提供高质量、大批量的个人防护装备（PPE）大宗批发业务。</p>
-                    <a href="#" class="shop-link-btn" target="_blank">进入 PPE 批发网店 ➔</a>
+                    <h3>🌐 Global Wholesaler: PPE Online Store</h3>
+                    <p>Connecting robust international supply chains to provide high-quality, bulk Personal Protective Equipment (PPE). Serving global buyers, retailers, and corporate clients with efficient cross-border distribution.</p>
+                    <a href="#" class="shop-link-btn" target="_blank">Enter B2B Shop ➔</a>
                 </div>
             </div>
             
             <div class="bio">
-                作为一名品牌主理人，我习惯将精湛的设计美学与全球化的商业视野相结合。无论是独立设计的灵感碰撞，还是跨国 PPE 供应链的统筹管理，我都致力于用高标准的专业度与全球客户建立长期的共赢连结。
+                As an entrepreneur and creative director, I bridge the gap between premium design aesthetics and global commercial vision. Whether managing intricate supply chains or conceptualizing next-season lines, I deliver excellence and build enduring international partnerships.
             </div>
             
-            <a href="tel:+6591956342" class="contact-btn">📞 联系方式：+65 9195 6342</a>
+            <a href="tel:+6591956342" class="contact-btn">📞 Connect: +65 9195 6342</a>
         </div>
 
-        <!-- 【核心修改】右侧替换为：真实的图片画廊展示墙 -->
+        <!-- Right Side: Gallery Showcase -->
         <div class="portfolio-side">
             
-            <!-- 服装设计作品区 -->
+            <!-- Fashion Portfolio Section -->
             <div class="gallery-section fashion">
-                <h2>Design Portfolio / 服装设计作品</h2>
+                <h2>Design Portfolio</h2>
                 <div class="grid-2x2">
                     <div class="art-box">
-                        <img src="design1.jpg" alt="服装设计图1">
-                        <span>设计草图 / Sketch 01</span>
+                        <img src="design1.jpg" alt="Design Sketch 1">
+                        <span>Creative Sketch / 01</span>
                     </div>
                     <div class="art-box">
-                        <img src="design2.jpg" alt="成衣照2">
-                        <span>成衣高级定制 / Work 02</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PPE防护产品区 -->
-            <div class="gallery-section ppe">
-                <h2>PPE Supply / 核心供应产品</h2>
-                <div class="grid-2x2">
-                    <div class="art-box">
-                        <img src="ppe1.jpg" alt="PPE产品1">
-                        <span>医用及工业级防护 / PPE 01</span>
-                    </div>
-                    <div class="art-box">
-                        <img src="ppe2.jpg" alt="PPE产品2">
-                        <span>大宗规格定制 / Bulk Supply</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </main>
-
-</body>
-</html>
+                        <img src="design2.jpg" alt="Couture Work 2">
