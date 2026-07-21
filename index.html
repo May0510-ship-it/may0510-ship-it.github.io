@@ -1,78 +1,244 @@
-html<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>May 的个人主页</title>
+    <title>May | 服装设计 & 全球批发</title>
     <style>
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.7; margin: 0; padding: 0; background-color: #f4f7f5; color: #2c3e2b; }
-        header { background: linear-gradient(135deg, #2e5a44, #477c63); color: #fff; padding: 3.5rem 2rem; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        header h1 { margin: 0; font-size: 2.8rem; letter-spacing: 2px; }
-        header p { margin: 0.8rem 0 0; color: #d1e2d9; font-size: 1.1rem; }
-        .container { max-width: 800px; margin: 2.5rem auto; padding: 0 1.5rem; }
-        
-        /* 头像样式 */
-        .profile-pic-container { text-align: center; margin-top: -50px; margin-bottom: 1.5rem; }
-        .profile-pic { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 5px solid #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background-color: #e2ede7; }
-        
-        section { background: #fff; padding: 2rem; margin-bottom: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(46,90,68,0.05); border-left: 5px solid #477c63; }
-        h2 { color: #2e5a44; border-bottom: 1px solid #e2ede7; padding-bottom: 0.6rem; margin-top: 0; font-size: 1.4rem; }
-        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
-        .info-item h3 { margin: 0 0 0.5rem 0; color: #477c63; font-size: 1.1rem; }
-        .info-item p { margin: 0; color: #556b5d; }
-        ul { padding-left: 1.2rem; margin: 0; color: #556b5d; }
-        li { margin-bottom: 0.5rem; }
-        
-        footer { text-align: center; padding: 3rem 2rem; color: #8fa499; font-size: 0.9rem; }
-        footer a { color: #477c63; text-decoration: none; }
+        :root {
+            --bg-color: #f3eae1;
+            --card-bg: #ffffff;
+            --text-color: #000000;
+            --accent-yellow: #fcd34d;
+            --accent-green: #a7f3d0;
+            --accent-purple: #e0e7ff;
+            --accent-pink: #fce7f3;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        /* 顶部导航栏样式 */
+        nav {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        nav a {
+            background: var(--card-bg);
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 8px 16px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border: 3px solid #000;
+            box-shadow: 4px 4px 0px #000;
+            transition: all 0.1s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        nav a:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #000;
+        }
+
+        nav a:nth-child(1) { background-color: var(--accent-pink); }
+        nav a:nth-child(2) { background-color: var(--accent-purple); }
+        nav a:nth-child(3) { background-color: var(--accent-green); }
+        nav a:nth-child(4) { background-color: var(--accent-yellow); }
+
+        /* 主体布局 */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 左侧卡片 */
+        .profile-card {
+            background: var(--card-bg);
+            border: 4px solid #000;
+            box-shadow: 12px 12px 0px #000;
+            padding: 2.5rem;
+        }
+
+        /* 照片容器 */
+        .photo-frame {
+            border: 4px solid #000;
+            box-shadow: 8px 8px 0px #000;
+            width: fit-content;
+            margin-bottom: 2rem;
+            line-height: 0;
+            background: #fff;
+        }
+
+        .photo-frame img {
+            width: 260px;
+            height: 320px;
+            object-fit: cover;
+        }
+
+        .location {
+            font-size: 0.9rem;
+            color: #555;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0 0 1.5rem 0;
+            line-height: 1.2;
+            font-weight: 900;
+        }
+
+        .badge {
+            background-color: var(--accent-yellow);
+            display: inline-block;
+            padding: 6px 12px;
+            font-weight: bold;
+            border: 3px solid #000;
+            box-shadow: 3px 3px 0px #000;
+            margin-bottom: 1.5rem;
+        }
+
+        .edu {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            border-top: 3px dashed #000;
+            padding-top: 1.5rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: var(--accent-green);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 24px;
+            border: 3px solid #000;
+            box-shadow: 5px 5px 0px #000;
+            font-size: 1.1rem;
+        }
+
+        .contact-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0px #000;
+        }
+
+        /* 右侧潮流艺术插画 */
+        .art-side {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circle-art {
+            width: 380px;
+            height: 380px;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b, #86e3ce);
+            border-radius: 50%;
+            border: 4px solid #000;
+            box-shadow: 15px 15px 0px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .leaf-1, .leaf-2 {
+            position: absolute;
+            background: #a7f3d0;
+            border: 3px solid #000;
+            border-radius: 0 50px 0 50px;
+        }
+
+        .leaf-1 { width: 60px; height: 35px; top: 40%; left: 20%; transform: rotate(-20deg); }
+        .leaf-2 { width: 50px; height: 30px; top: 48%; left: 38%; transform: rotate(15deg); background: #34d399; }
+
+        .line-art {
+            position: absolute;
+            width: 250px;
+            height: 8px;
+            background: #000;
+            top: 50%;
+            left: 10%;
+            transform: rotate(-15deg);
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>May's Space</h1>
-        <p>服装设计与全球批发在线商店</p>
-    </header>
+    <!-- 顶部艺术风格导航栏 -->
+    <nav>
+        <a href="#">Δ 首页</a>
+        <a href="#">✦ 经历</a>
+        <a href="#">✣ 商店</a>
+        <a href="#">✉ 联系</a>
+    </nav>
 
-    <div class="container">
-        <!-- 自拍照片位置，默认显示占位图 -->
-        <div class="profile-pic-container">
-            <img src="https://unsplash.com" alt="May 的自拍" class="profile-pic" id="myAvatar">
+    <!-- 主体内容布局 -->
+    <main class="main-layout">
+        
+        <!-- 左侧个人名片卡 -->
+        <div class="profile-card">
+            <div class="photo-frame">
+                <!-- 这里已经完美对准了你的自拍 me.jpg -->
+                <img src="me.jpg" alt="May 的自拍照">
+            </div>
+            
+            <div class="location">新加坡 · 吉隆坡</div>
+            <h1>嗨，我是<br>May。</h1>
+            
+            <div class="badge">服装设计师与主理人</div>
+            
+            <div class="edu">🎓 新加坡国立大学 (NUS) 学士学位</div>
+            
+            <div class="bio">
+                我创立并经营着一家位于新加坡的独立服装设计工作室。同时，作为副业，我也运营着一家面向全球批发的在线商店。我热衷于将独特的时尚构思转化为高品质的服装面料，用创意与全球客户建立长期的商业连结。
+            </div>
+            
+            <a href="tel:+6591956342" class="contact-btn">联系方式：+65 9195 6342</a>
         </div>
 
-        <section>
-            <h2>关于我 / About Me</h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <h3>居住地</h3>
-                    <p>新加坡 (SG) / 吉隆坡 (KL)</p>
-                </div>
-                <div class="info-item">
-                    <h3>教育背景</h3>
-                    <p>新加坡国立大学 (NUS) 毕业</p>
-                </div>
+        <!-- 右侧新粗犷主义几何插画（纯代码绘制，无需外接图片） -->
+        <div class="art-side">
+            <div class="circle-art">
+                <div class="line-art"></div>
+                <div class="leaf-1"></div>
+                <div class="leaf-2"></div>
             </div>
-        </section>
+        </div>
 
-        <section>
-            <h2>职业与事业 / Career</h2>
-            <ul>
-                <li><strong>主业：</strong>经营个人独立服装设计工作室（创立于新加坡）</li>
-                <li><strong>副业：</strong>运营面向全球批发的在线商店</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>联系方式 / Contact</h2>
-            <p>如果您对我的设计作品或批发业务感兴趣，欢迎联系我：</p>
-            <p style="font-size: 1.2rem; font-weight: bold; color: #2e5a44; margin-top: 0.5rem;">📞 +65 9195 6342</p>
-        </section>
-    </div>
-
-    <footer>
-        <p>© 2026 May. All Rights Reserved.</p>
-        <p>Powered by <a href="https://may0510-ship-it.github.io/May.github.io/" target="_blank">GitHub Pages</a></p>
-    </footer>
+    </main>
 
 </body>
 </html>
